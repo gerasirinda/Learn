@@ -21,13 +21,11 @@ public class Assignment2_2 {
         int n = 0;
         double a;
         do {
-            n++;
-            a = 1 / Math.pow(n + 1, 2);
-            System.out.println("a[" + n + "]=" + a);
+            index++;
+            a = 1 / Math.pow(index + 1, 2);
+            System.out.println("a[" + index + "]=" + a);
 
-            index = n;
-
-        } while (a > e);
+            } while (a > e);
         System.out.println("Наименьший элемент последовательности a[" + n + "]=" + a);
 
 
@@ -40,16 +38,15 @@ public class Assignment2_2 {
         scanner.useLocale(locale);
 
         do {
-
+            if (e != Double.MIN_VALUE) {
+                System.out.println("Недопустимое значение е. Попробуйте ещё раз");
+            }
             while (!scanner.hasNextDouble()) {
                 scanner.next();
                 System.out.println("Недопустимое значение е. Попробуйте ещё раз");
 
             }
-            if (e != Double.MIN_VALUE) {
-                System.out.println("Недопустимое значение е. Попробуйте ещё раз");
 
-            }
             e = scanner.nextDouble();
 
         } while (e > 0.25 || e <= 0);
